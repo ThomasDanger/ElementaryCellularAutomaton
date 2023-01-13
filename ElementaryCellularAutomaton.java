@@ -52,6 +52,7 @@ public class Main {
         int cur = 0;
         for(int i = 0; i < 32; i++){
             for(int j = 0; j < 8; j++){
+                // ^^^ Remove this second loop
                 if((j^(prev&7))==0){
                     if((1&(rule>>j))!=0)
                         cur++;
