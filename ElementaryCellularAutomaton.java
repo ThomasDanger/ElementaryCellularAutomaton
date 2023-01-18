@@ -5,9 +5,6 @@ Elementary Cellular Automaton created without using arrays
 
 This program is incomplete as I will stil need to implement "wrapping" using arithmetic operations
 
-At first I believed I had done this without any arithmetic operations, but obviously the for-loops
-have arithmetic operations, so I was wrong.
-
 FOR STUDENTS:
 If you are a student, do NOT copy and paste this code on a programming assignment. Your
 teacher/professor will not expect you to use bitwise functions like this.
