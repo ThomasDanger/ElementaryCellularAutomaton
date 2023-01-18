@@ -2,7 +2,7 @@
 
 `Elementary Cellular Automaton with ASCII graphics`
 
-## BackGround
+## Background
 This was a fun 5-minute project. I remembered creating a cellular automaton program in Scratch for a
 project I had in my computer science class through the University of Texas, Austin, and figured this would
 be a fun little throwback.
