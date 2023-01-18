@@ -40,3 +40,7 @@ interesting as there is very little code written and all calculations were done 
     ...$$$.......$$$.$...$.$$....$..
     ..$$$..$$..$$.$$.$..$.....$$..$$
 
+## Going Forward
+
+As seen in the output example, this program lacks wrapping.
+
