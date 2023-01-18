@@ -10,4 +10,5 @@ be a fun little throwback.
 ## In All Fairness...
 I understand elementary cellular automaton is a project that a middle-schooler could
 complete (assuming they have the smallest undertanding of base 2 integers), but I feel my solution was fairly
-interesting as there is very little code written and all calculations were done of integers rather than arrays
+interesting as there is very little code written and all calculations were done of integers rather than arrays 
+(which I assume is the standard way a middle-schooler would write an elementary cellular automaton program)
