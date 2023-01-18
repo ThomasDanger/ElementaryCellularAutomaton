@@ -12,3 +12,30 @@ I understand elementary cellular automaton is a project that a middle-schooler c
 complete (assuming they have the smallest undertanding of base 2 integers), but I feel my solution was fairly
 interesting as there is very little code written and all calculations were done of integers rather than arrays 
 (which I assume is the standard way a middle-schooler would write an elementary cellular automaton program)
+
+## Output Example
+
+`Enter rule (0-255): 30
+Enter num generations: 20
+````````````````$```````````````
+```````````````$$$``````````````
+``````````````$$``$`````````````
+`````````````$$$$$`$````````````
+````````````$$`$````$```````````
+```````````$$$``$$`$`$``````````
+``````````$$`$`$`$$$``$`````````
+`````````$$$$$```$`$`$`$````````
+````````$$`$`$`$$`$$````$```````
+```````$$$``$$``$``$`$`$`$``````
+``````$$`$`$`$$$$$$$`$$$``$`````
+`````$$$$$```$```````$`$`$`$````
+````$$`$`$`$$`````$$$`$$````$```
+```$$$``$$``$``$```$$``$`$`$`$``
+``$$`$`$`$$$$`$`$$$$$$$$`$$$``$$
+```$$$```$````````$`$````$`$`$``
+``$$`$`$$``$$`$$``````$$$`$$``$$
+```$$$``$``$````$$``$`$$$``$`$``
+``$$`$$$$```$$$$`$``$$$$$$$$``$$
+```$$$```````$$$`$```$`$$````$``
+``$$$``$$``$$`$$`$``$`````$$``$$
+`
