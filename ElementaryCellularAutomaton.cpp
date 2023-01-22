@@ -1,11 +1,12 @@
 #include <iostream>
 
-int calcNextRow(int, int);
-void drawRow(int);
+unsigned int calcNextRow(unsigned int, unsigned int);
+void drawRow(unsigned int);
 
 int main() {
-    int rule = -1;
-    int numGens = -1;
+    unsigned int rule = 256;
+    unsigned int numGens = 0;
+
 
     while(rule < 0 || rule>255) {
         std::cout << "Enter rule (0-255): " << std::endl;
@@ -17,7 +18,7 @@ int main() {
         std::cin >> numGens;
     }
 
-    int cur = 1<<16;
+    unsigned int cur = 1<<16;
 
     for(int i = 0; i <= numGens; i++){
         drawRow(cur);
@@ -27,24 +28,31 @@ int main() {
     return 0;
 }
 
-int calcNextRow(int prev, int rule){
-    int cur = 0;
-    for(int i = 0; i< 32; i++){
-        if((rule&(1<<(prev&7)))!=0)
-            cur++;
-        cur=cur<<1;
-        prev=prev>>1;
+unsigned int calcNextRow(unsigned int prev, unsigned int rule){
+    unsigned int cur = 0;
+
+    if((rule&(1<<(((prev&(3<<30))>>30) + ((prev&1)<<2)))) !=0){
+        cur++;
     }
-    return cur>>1;
+
+    for(int i = 0; i < 31; i++){
+        cur=cur<<1;
+        if((rule&(1<<((prev&(7<<29))>>29)))!=0)
+            cur++;
+        prev=(prev<<1)+((prev&(1<<31))>>31);
+    }
+
+    return cur;
 }
 
-void drawRow(int row){
-    for(int i = 0; i < 32; i++){
-        if((row&1) == 1)
+void drawRow(unsigned int row){
+    for(int i = 31; i >=0; i--){
+        if((row&(1<<i)) == 1<<i){
             std::cout << "$";
-        else
+        }
+        else{
             std::cout << ".";
-        row=row>>1;
+        }
     }
     std::cout << "\n";
 }
