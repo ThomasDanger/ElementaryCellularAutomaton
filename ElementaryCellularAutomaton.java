@@ -25,6 +25,7 @@ public class Main {
         //Probably not the best way to perform rudimentary input validation, but input validation
         //was sort of an after-thought with this program
         
+        
         int rule = -1;
         while(rule < 0 || rule > 255){
             System.out.print("Enter rule (0-255): ");
@@ -37,8 +38,7 @@ public class Main {
             numGens = scan.nextInt();
         }
         
-        int cur = 1<<16;    // This makes it easier to change starting pos intead of putting an int literal
-                            // 16 initializes the bit in the strting row to the center of the row
+        int cur = 1<<16; //This makes it easier to change starting pos intead of putting an int literal
         
         for(int i = 0; i <= numGens; i++){
             drawRow(cur);
@@ -47,31 +47,32 @@ public class Main {
         scan.close();
     }
     
-    
     //Calculates the binary string representing the next row in the cellular automaton
     
     public static int calcNextRow(int prev, int rule){
         int cur = 0;
-        for(int i = 0; i < 32; i++){
-            if((rule&(1<<(prev&7)))!=0)
-                cur++;
+        
+        for(int i = 0; i < 31; i++){
             cur=cur<<1;
-            prev=prev>>1;
+            if((rule&(1<<((prev&(7<<29))>>>29)))!=0)
+                cur++;
+            int temp = prev&(3<<30)>>>30;
+
+            prev=prev<<1 + temp;
         }
-        return cur>>1;
+        return cur;
     }
     
-    //Draws the given bit string IS ascii characters
+    //Draws the given bit string in ascii characters
     
     public static void drawRow(int row){
-        for(int i = 0; i < 32; i++){
-            if((row&1) == 1){
+        for(int i = 31; i >=0; i--){
+            if((row&(1<<i)) == 1<<i){
                 System.out.print("$");
             }
             else{
                 System.out.print(".");
             }
-            row=row>>1;
         }
         System.out.println();
     }
