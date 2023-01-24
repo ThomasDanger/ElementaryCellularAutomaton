@@ -8,7 +8,7 @@ int main() {
     unsigned int numGens = 0;
 
 
-    while(rule < 0 || rule>255) {
+    while(rule>255) {
         std::cout << "Enter rule (0-255): " << std::endl;
         std::cin >> rule;
     }
